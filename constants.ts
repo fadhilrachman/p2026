@@ -123,12 +123,42 @@ export const PROJECTS: IProject[] = [
     url: "https://icownicpath.com",
     tech: ["html", "css", "javascript", "tailwind"],
   },
+  {
+    name: "CMS BKN",
+    image: "https://storage.arnatech.id/a525bc3f-b50f-4ba9-ac47-459698cf0ace",
+    description: "Fullstack CMS development using Next.js and Express JS.",
+    gradient: ["#4338CA", "#06B6D4"],
+    url: "https://www.bisnisnaikkelas.com/",
+    tech: ["next", "react", "typescript", "Express JS"],
+  },
 ];
 
 export const SKILLS = {
-  frontend: ["javascript", "react", "next", "typescript", "tailwind", "html", "css"],
-  userInterface: ["figma"],
-  other: ["git"],
+  frontend: [
+    "html",
+    "css",
+    "sass",
+    "bootstrap",
+    "tailwind",
+    "chakra-ui",
+    "javascript",
+    "php",
+    "react",
+    "next",
+    "redux",
+    "typescript",
+    "vue",
+  ],
+  backend: [
+    "node",
+    "express",
+    "nestjs",
+    "laravel",
+    "golang",
+    "python",
+    "django",
+  ],
+  database: ["postgresql", "sql", "mysql", "mongodb"],
 };
 
 export interface IExperience {

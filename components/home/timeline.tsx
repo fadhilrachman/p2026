@@ -3,47 +3,16 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-import { MutableRefObject, useEffect, useRef, useState } from "react";
+import React from "react";
 import { EXPERIENCES, IExperience, MENULINKS } from "../../constants";
-import { gsap, Linear } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { IDesktop } from "pages";
 
 const TimelineSection = (_props: IDesktop) => {
-  const targetSection: MutableRefObject<HTMLDivElement> = useRef(null);
-  const [willChange, setWillChange] = useState(false);
-
-  const initRevealAnimation = (
-    targetSection: MutableRefObject<HTMLDivElement>
-  ): ScrollTrigger => {
-    const revealTl = gsap.timeline({ defaults: { ease: Linear.easeNone } });
-    revealTl.from(
-      targetSection.current.querySelectorAll(".seq"),
-      { opacity: 0, y: 24, duration: 0.45, stagger: 0.12 },
-      "<"
-    );
-
-    return ScrollTrigger.create({
-      trigger: targetSection.current.querySelector(".experience-list"),
-      start: "top 80%",
-      end: "bottom 60%",
-      animation: revealTl,
-      scrub: 0,
-      onToggle: (self) => setWillChange(self.isActive),
-    });
-  };
-
-  useEffect(() => {
-    const revealAnimationRef = initRevealAnimation(targetSection);
-
-    return revealAnimationRef.kill;
-  }, [targetSection]);
-
   const renderSectionTitle = (): React.ReactNode => (
     <div className="flex flex-col">
-      <p className="section-title-sm seq">EXPERIENCE</p>
-      <h1 className="section-heading seq mt-2">Work Experience</h1>
-      <h2 className="text-2xl md:max-w-2xl w-full seq mt-2">
+      <p className="section-title-sm">EXPERIENCE</p>
+      <h1 className="section-heading mt-2">Work Experience</h1>
+      <h2 className="text-2xl md:max-w-2xl w-full mt-2">
         Professional experience based on my LinkedIn profile.
       </h2>
     </div>
@@ -68,9 +37,9 @@ const TimelineSection = (_props: IDesktop) => {
   ): React.ReactNode => (
     <li
       key={`${experience.company}-${experience.startDate}`}
-      className={`seq relative pl-8 pb-12 ${
+      className={`relative pl-8 pb-12 ${
         index === EXPERIENCES.length - 1 ? "pb-0" : ""
-      } ${willChange ? "will-change-opacity" : ""}`}
+      }`}
     >
       {index !== EXPERIENCES.length - 1 && (
         <span className="absolute left-2 top-4 h-full w-px bg-gray-700"></span>
@@ -105,7 +74,6 @@ const TimelineSection = (_props: IDesktop) => {
     <section
       className="w-full relative select-none min-h-screen section-container py-8 flex flex-col justify-center"
       id={MENULINKS[3].ref}
-      ref={targetSection}
     >
       {renderSectionTitle()}
       <ol className="experience-list mt-16">
