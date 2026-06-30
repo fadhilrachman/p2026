@@ -13,7 +13,7 @@ export const METADATA = {
 export const HOME = {
   name: "Fadhil Rahman",
   job: "Fullstack Developer",
-  headline: "Fullstack Developer | React (Next.js) | Node.js | TypeScript",
+  headline: "Fullstack Developer",
   shortDescription:
     "I build clean, scalable, and user-friendly web applications using modern frontend and backend technologies.",
   location: "Jakarta, Indonesia",
@@ -202,12 +202,12 @@ export const EXPERIENCES: IExperience[] = [
     location: "Jakarta, Indonesia",
     workType: "Remote",
     description: [
-      "Developed frontend pages based on provided UI requirements.",
-      "Built responsive layouts for desktop and mobile screens.",
-      "Integrated frontend components with API data and dynamic content.",
-      "Maintained clean component structure for easier development and updates.",
+      "Developed CMS-driven pages and components using .NET and Optimizely CMS.",
+      "Implemented responsive frontend views from provided UI requirements.",
+      "Integrated structured CMS content with Razor views and backend logic.",
+      "Maintained clean component structure for easier content and feature updates.",
     ],
-    techStack: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "REST API"],
+    techStack: [".NET", "Optimizely CMS", "C#", "Razor", "JavaScript"],
   },
   {
     title: "Full Stack Engineer",
