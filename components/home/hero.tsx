@@ -102,10 +102,9 @@ const HeroSection = React.memo(() => {
           classes="ml-3"
           type={ButtonTypes.PRIMARY}
           name={HOME.cta.secondary}
-          href={HOME.linkedinUrl}
+          href={HOME.cvUrl}
           otherProps={{
-            target: "_blank",
-            rel: "noreferrer",
+            download: "CV - Fadhil Rahman.pdf",
           }}
         ></Button>
       </div>

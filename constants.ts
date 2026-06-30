@@ -19,9 +19,10 @@ export const HOME = {
   location: "Jakarta, Indonesia",
   currentCompany: "Arnatech",
   linkedinUrl: "https://www.linkedin.com/in/fadhil-rahman-856096247/",
+  cvUrl: "/cv-fadhil-rahman.pdf",
   cta: {
     primary: "View Projects",
-    secondary: "Contact Me",
+    secondary: "Download CV",
   },
 };
 
