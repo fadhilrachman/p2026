@@ -7,6 +7,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import Menu from "@/components/common/menu";
+import { HOME } from "../../constants";
 
 const Header = () => {
   const [menuVisible, setmenuVisible] = useState(false);
@@ -17,7 +18,7 @@ const Header = () => {
         <a href="#home" className="link">
           <Image
             src="/logo.svg"
-            alt="Logo - Ayush Singh"
+            alt={`Logo - ${HOME.name}`}
             width={22}
             height={22}
           />

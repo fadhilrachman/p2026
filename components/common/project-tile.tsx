@@ -96,15 +96,16 @@ const ProjectTile = ({
 
   const renderProjectImage = (
     image: string,
-    blurImage: string,
+    blurImage: string | undefined,
     name: string
   ): React.ReactNode => (
     <Image
-      placeholder="blur"
+      placeholder={blurImage ? "blur" : "empty"}
       blurDataURL={blurImage}
       src={image}
       alt={name}
       layout="fill"
+      objectFit="cover"
       className={`${styles.ProjectImg} z-0`}
     />
   );

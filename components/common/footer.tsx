@@ -1,10 +1,9 @@
 // Copyright Ayush Singh 2021,2022. All Rights Reserved.
 // Project: folio
-// Author contact: https://www.linkedin.com/in/alphaayush/
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-import { EMAIL, MENULINKS, SOCIAL_LINKS } from "../../constants";
+import { HOME, MENULINKS, SOCIAL_LINKS } from "../../constants";
 import Image from "next/image";
 import Button, { ButtonTypes } from "./button";
 
@@ -33,18 +32,14 @@ const Footer = () => {
         <Button
           classes="mr-3"
           type={ButtonTypes.OUTLINE}
-          name="Resume"
-          otherProps={{
-            target: "_blank",
-            rel: "noreferrer",
-          }}
-          href="/Ayush_Resume.pdf"
+          name={HOME.cta.primary}
+          href={`#${MENULINKS[1].ref}`}
         ></Button>
         <Button
           classes="ml-3"
           type={ButtonTypes.WHITE}
-          name="Let's Talk"
-          href={SOCIAL_LINKS.topmate}
+          name={HOME.cta.secondary}
+          href={HOME.linkedinUrl}
           otherProps={{
             target: "_blank",
             rel: "noreferrer",
@@ -52,7 +47,7 @@ const Footer = () => {
         ></Button>
       </div>
       <h2 className="text-center text-sm sm:text-base mt-8">
-        Designed and Developed with ❤️ by Ayush
+        Designed and Developed by {HOME.name}
       </h2>
     </>
   );

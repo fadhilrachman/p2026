@@ -4,7 +4,7 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-import { EMAIL, MENULINKS, SOCIAL_LINKS, TYPED_STRINGS } from "../../constants";
+import { HOME, MENULINKS, SOCIAL_LINKS, TYPED_STRINGS } from "../../constants";
 import React, { MutableRefObject, useEffect, useRef } from "react";
 import Typed from "typed.js";
 import Image from "next/image";
@@ -83,7 +83,10 @@ const HeroSection = React.memo(() => {
     <div className={HERO_STYLES.CONTENT}>
       <div className="md:mb-4 mb-2">
         <h2 className="text-4xl seq">Hello 👋🏻</h2>
-        <h1 className="text-3xl seq">I am Ayush Singh</h1>
+        <h1 className="text-3xl seq">I am {HOME.name}</h1>
+        <h2 className="text-xl sm:text-2xl md:text-3xl seq mt-2">
+          {HOME.headline}
+        </h2>
       </div>
       <p className="mb-4">
         <span className={HERO_STYLES.TYPED_SPAN} ref={typedSpanElement}></span>
@@ -93,18 +96,14 @@ const HeroSection = React.memo(() => {
         <Button
           classes="mr-3"
           type={ButtonTypes.OUTLINE}
-          name="Resume"
-          otherProps={{
-            target: "_blank",
-            rel: "noreferrer",
-          }}
-          href="/Ayush_Resume.pdf"
+          name={HOME.cta.primary}
+          href={`#${MENULINKS[1].ref}`}
         ></Button>
         <Button
           classes="ml-3"
           type={ButtonTypes.PRIMARY}
-          name="Let's Talk"
-          href={SOCIAL_LINKS.topmate}
+          name={HOME.cta.secondary}
+          href={HOME.linkedinUrl}
           otherProps={{
             target: "_blank",
             rel: "noreferrer",
