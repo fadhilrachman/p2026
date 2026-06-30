@@ -1,6 +1,5 @@
 // Copyright Ayush Singh 2021,2022. All Rights Reserved.
 // Project: folio
-// Author contact: https://www.linkedin.com/in/alphaayush/
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
@@ -82,7 +81,7 @@ const HeroSection = React.memo(() => {
   const renderHeroContent = (): React.ReactNode => (
     <div className={HERO_STYLES.CONTENT}>
       <div className="md:mb-4 mb-2">
-        <h2 className="text-4xl seq">Hello 👋🏻</h2>
+        <h2 className="text-4xl seq">Hello</h2>
         <h1 className="text-3xl seq">I am {HOME.name}</h1>
         <h2 className="text-xl sm:text-2xl md:text-3xl seq mt-2">
           {HOME.headline}

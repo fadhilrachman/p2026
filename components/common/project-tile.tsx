@@ -24,7 +24,7 @@ const ProjectTile = ({
     image,
     blurImage,
     description,
-    gradient: [stop1, stop2],
+    gradient: [stop1],
   } = project;
 
   useEffect(() => {
@@ -37,27 +37,19 @@ const ProjectTile = ({
     });
   }, [projectCard]);
 
-  const renderTechIcons = (techStack: string[]): React.ReactNode => (
-    <div
-      className={`
-      ${styles.techIcons} w-1/2 h-full absolute left-24 top-0 sm:flex items-center hidden
-    `}
-    >
-      <div className="flex flex-col pb-8">
-        {techStack.map((tech, i) => (
-          <div className={`${i % 2 === 0 && "ml-16"} mb-4`} key={tech}>
-            <Image
-              src={`/projects/tech/${tech}.svg`}
-              alt={tech}
-              height={45}
-              objectFit="contain"
-              width={45}
-            />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+  const formatTechName = (techName: string): string => {
+    const techNames: Record<string, string> = {
+      css: "CSS",
+      html: "HTML",
+      javascript: "JavaScript",
+      next: "Next.js",
+      react: "React.js",
+      tailwind: "Tailwind CSS",
+      typescript: "TypeScript",
+    };
+
+    return techNames[techName] || techName;
+  };
 
   const renderDescription = (description: string): React.ReactNode => (
     <h2
@@ -66,6 +58,22 @@ const ProjectTile = ({
     >
       {description}
     </h2>
+  );
+
+  const renderTechStack = (techStack: string[]): React.ReactNode => (
+    <div
+      className="flex flex-wrap gap-2 mt-4 z-10"
+      style={{ transform: "translateZ(1rem)" }}
+    >
+      {techStack.map((techName) => (
+        <span
+          key={techName}
+          className="text-xs sm:text-sm font-medium px-3 py-1 rounded-full bg-white bg-opacity-10 text-white border border-white border-opacity-20"
+        >
+          {formatTechName(techName)}
+        </span>
+      ))}
+    </div>
   );
 
   const renderProjectName = (name: string): React.ReactNode => (
@@ -80,15 +88,15 @@ const ProjectTile = ({
   const renderTopBottomGradient = (gradient: string): React.ReactNode => (
     <>
       <div
-        className="absolute top-0 left-0 w-full h-20"
+        className="absolute top-0 left-0 w-full h-32 z-0"
         style={{
-          background: `linear-gradient(180deg, ${gradient} 0%, rgba(0,0,0,0) 100%)`,
+          background: `linear-gradient(180deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.2) 70%, rgba(0,0,0,0) 100%)`,
         }}
       ></div>
       <div
-        className="absolute bottom-0 left-0 w-full h-32"
+        className="absolute bottom-0 left-0 w-full h-56 z-0"
         style={{
-          background: `linear-gradient(0deg, ${gradient} 10%, rgba(0,0,0,0) 100%)`,
+          background: `linear-gradient(0deg, ${gradient} 0%, rgba(0,0,0,.82) 0%, rgba(0,0,0,.52) 55%, rgba(0,0,0,0) 100%)`,
         }}
       ></div>
     </>
@@ -131,20 +139,16 @@ const ProjectTile = ({
            rounded-3xl relative p-6 flex-col flex justify-between max-w-full
         `}
         style={{
-          background: `linear-gradient(90deg, ${stop1} 0%, ${stop2} 100%)`,
+          background: stop1,
         }}
       >
-        <Image
-          src="/project-bg.svg"
-          alt="Project"
-          layout="fill"
-          className="absolute w-full h-full top-0 left-0 opacity-20"
-        />
         {renderProjectImage(image, blurImage, name)}
         {renderTopBottomGradient(stop1)}
         {renderProjectName(name)}
-        {renderTechIcons(tech)}
-        {renderDescription(description)}
+        <div>
+          {renderDescription(description)}
+          {renderTechStack(tech)}
+        </div>
       </div>
     </a>
   );

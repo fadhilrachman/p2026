@@ -112,7 +112,7 @@ export const PROJECTS: IProject[] = [
       "CMS-driven public tourism platform using .NET and Optimizely CMS.",
     gradient: ["#047857", "#84CC16"],
     url: "https://www.indonesia.travel/",
-    tech: ["javascript", "html", "css"],
+    tech: [".NET", "Optimizely CMS", "C#", "JavaScript"],
   },
   {
     name: "Icownic",
@@ -131,120 +131,88 @@ export const SKILLS = {
   other: ["git"],
 };
 
-export enum Branch {
-  LEFT = "leftSide",
-  RIGHT = "rightSide",
+export interface IExperience {
+  title: string;
+  company: string;
+  employmentType: string;
+  startDate: string;
+  endDate: string;
+  duration: string;
+  location: string;
+  workType: string;
+  description: string[];
+  techStack: string[];
 }
 
-export enum NodeTypes {
-  CONVERGE = "converge",
-  DIVERGE = "diverge",
-  CHECKPOINT = "checkpoint",
-}
-
-export enum ItemSize {
-  SMALL = "small",
-  LARGE = "large",
-}
-
-export const TIMELINE: Array<TimelineNodeV2> = [
+export const EXPERIENCES: IExperience[] = [
   {
-    type: NodeTypes.CHECKPOINT,
-    title: "2025",
-    size: ItemSize.LARGE,
-    shouldDrawLine: false,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "Frontend Developer",
-    size: ItemSize.SMALL,
-    subtitle:
-      "Freelance frontend development at Magnus using React.js, Next.js, TypeScript, Tailwind CSS, and REST APIs.",
-    shouldDrawLine: true,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "2024",
-    size: ItemSize.LARGE,
-    shouldDrawLine: false,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
     title: "Software Developer",
-    size: ItemSize.SMALL,
-    subtitle:
-      "Full-time software developer at Arnatech, building modern frontend applications with Nuxt.js, Vue.js, TypeScript, Ant Design, and REST APIs.",
-    shouldDrawLine: true,
-    alignment: Branch.LEFT,
+    company: "Arnatech",
+    employmentType: "Full-time",
+    startDate: "Aug 2024",
+    endDate: "Present",
+    duration: "1 yr 11 mos",
+    location: "Bandung, West Java, Indonesia",
+    workType: "On-site",
+    description: [
+      "Developed modern client-rendered frontend applications using Nuxt.js.",
+      "Implemented responsive and user-friendly interfaces using Ant Design.",
+      "Worked on frontend feature development, API integration, and UI improvements.",
+      "Collaborated with the team to maintain performance, usability, and code quality.",
+    ],
+    techStack: ["Nuxt.js", "Vue.js", "TypeScript", "Ant Design", "REST API"],
   },
   {
-    type: NodeTypes.CHECKPOINT,
-    title: "Full Stack Engineer",
-    size: ItemSize.SMALL,
-    subtitle:
-      "Worked at Bahawan Integrasi Nusantara on Next.js, TypeScript, Chakra UI, Formik, Zustand, and API integration.",
-    shouldDrawLine: true,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "2022",
-    size: ItemSize.LARGE,
-    shouldDrawLine: false,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
     title: "Frontend Developer",
-    size: ItemSize.SMALL,
-    subtitle:
-      "Sliced Figma designs into responsive React.js interfaces at Sagara Technology using Bootstrap, Ant Design, Axios, and JavaScript.",
-    shouldDrawLine: true,
-    alignment: Branch.LEFT,
+    company: "Magnus",
+    employmentType: "Freelance",
+    startDate: "Jul 2025",
+    endDate: "Dec 2025",
+    duration: "6 mos",
+    location: "Jakarta, Indonesia",
+    workType: "Remote",
+    description: [
+      "Developed frontend pages based on provided UI requirements.",
+      "Built responsive layouts for desktop and mobile screens.",
+      "Integrated frontend components with API data and dynamic content.",
+      "Maintained clean component structure for easier development and updates.",
+    ],
+    techStack: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "REST API"],
   },
   {
-    type: NodeTypes.CHECKPOINT,
-    title: "2021",
-    size: ItemSize.LARGE,
-    shouldDrawLine: false,
-    alignment: Branch.LEFT,
+    title: "Full Stack Engineer",
+    company: "Bahawan Integrasi Nusantara",
+    employmentType: "Full-time",
+    startDate: "Jun 2023",
+    endDate: "Aug 2024",
+    duration: "1 yr 3 mos",
+    location: "Pancoran Mas, West Java, Indonesia",
+    workType: "On-site",
+    description: [
+      "Integrated backend APIs into web applications using Next.js and TypeScript.",
+      "Developed frontend interfaces with Chakra UI, Formik, and Zustand.",
+      "Worked on fullstack features, including frontend implementation and data flow integration.",
+      "Improved application usability through responsive UI and structured state management.",
+    ],
+    techStack: ["Next.js", "TypeScript", "Chakra UI", "Formik", "Zustand", "REST API"],
   },
   {
-    type: NodeTypes.CHECKPOINT,
-    title: "Started Programming",
-    size: ItemSize.SMALL,
-    subtitle:
-      "Started learning programming in August 2021 and built a foundation in frontend and fullstack web development.",
-    shouldDrawLine: true,
-    alignment: Branch.LEFT,
-  },
-  {
-    type: NodeTypes.CHECKPOINT,
-    title: "",
-    size: ItemSize.LARGE,
-    shouldDrawLine: false,
-    alignment: Branch.LEFT,
+    title: "Frontend Developer",
+    company: "Sagara Technology",
+    employmentType: "Full-time",
+    startDate: "Mar 2022",
+    endDate: "Jul 2022",
+    duration: "5 mos",
+    location: "Kecamatan Gedebage, West Java, Indonesia",
+    workType: "On-site",
+    description: [
+      "Sliced Figma designs into interactive web interfaces using React.js.",
+      "Built responsive frontend pages using Bootstrap and Ant Design.",
+      "Integrated backend APIs into web applications using Axios.",
+      "Implemented UI components and managed frontend state for application features.",
+    ],
+    techStack: ["React.js", "Bootstrap", "Ant Design", "Axios", "JavaScript"],
   },
 ];
-
-export type TimelineNodeV2 = CheckpointNode | BranchNode;
-
-export interface CheckpointNode {
-  type: NodeTypes.CHECKPOINT;
-  title: string;
-  subtitle?: string;
-  size: ItemSize;
-  image?: string;
-  slideImage?: string;
-  shouldDrawLine: boolean;
-  alignment: Branch;
-}
-
-export interface BranchNode {
-  type: NodeTypes.CONVERGE | NodeTypes.DIVERGE;
-}
 
 export const GTAG = "UA-163844688-1";

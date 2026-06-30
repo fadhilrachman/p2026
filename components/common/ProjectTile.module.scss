@@ -21,19 +21,13 @@
 }
 
 .ProjectImg {
-  @apply absolute top-0 rounded-xl shadow-xl;
+  @apply absolute top-0 left-0 rounded-3xl;
 
-  width: 16.8rem !important;
-  transform: rotate(-22.5deg);
-  height: unset !important;
-  min-width: unset !important;
-  max-height: unset !important;
-  object-fit: contain !important;
-  left: unset !important;
-  right: 2rem !important;
-  bottom: unset !important;
-}
-
-.techIcons {
-  transform: rotate(-22.5deg) translateZ(2rem);
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: cover !important;
+  right: 0 !important;
+  bottom: 0 !important;
 }
