@@ -91,7 +91,7 @@ export const PROJECTS: IProject[] = [
     name: "EMS Arnatech",
     image: "https://storage.arnatech.id/6287abb7-1fe5-4831-a7ae-7a1a6da029fa",
     description:
-      "Frontend development using Next.js for internal business operations.",
+      "Built the frontend for an AI-powered employee monitoring platform with KPI tracking, smart attendance, and productivity insights.",
     gradient: ["#0F766E", "#14B8A6"],
     url: "https://ems.arnatech.id",
     tech: ["next", "react", "typescript"],

@@ -16,18 +16,6 @@ const SKILL_STYLES = {
   SKILL_TITLE: "section-title-sm mb-4 seq",
 };
 
-const SKILL_ICON_MAP: Record<string, string> = {
-  css: "css",
-  html: "html",
-  javascript: "javascript",
-  next: "next",
-  react: "react",
-  redux: "redux",
-  sass: "sass",
-  tailwind: "tailwind",
-  typescript: "typescript",
-};
-
 const SKILL_LABEL_MAP: Record<string, string> = {
   bootstrap: "Bootstrap",
   "chakra-ui": "Chakra UI",
@@ -129,25 +117,14 @@ const SkillsSection = () => {
           willChange ? "will-change-opacity" : ""
         }`}
       >
-        {skills.map((skill) =>
-          SKILL_ICON_MAP[skill] ? (
-            <Image
-              key={skill}
-              src={`/skills/${SKILL_ICON_MAP[skill]}.svg`}
-              alt={SKILL_LABEL_MAP[skill]}
-              width={76}
-              height={76}
-              className="skill"
-            />
-          ) : (
-            <span
-              key={skill}
-              className="seq flex items-center justify-center min-w-20 h-12 px-4 mr-4 mb-4 rounded bg-gray-800 text-gray-100 text-sm font-medium border border-gray-700"
-            >
-              {SKILL_LABEL_MAP[skill]}
-            </span>
-          )
-        )}
+        {skills.map((skill) => (
+          <span
+            key={skill}
+            className="flex items-center justify-center min-w-20 h-12 px-4 mr-4 mb-4 rounded bg-gray-800 text-gray-100 text-sm font-medium border border-gray-700"
+          >
+            {SKILL_LABEL_MAP[skill]}
+          </span>
+        ))}
       </div>
     </>
   );
