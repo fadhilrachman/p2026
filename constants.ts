@@ -121,7 +121,7 @@ export const PROJECTS: IProject[] = [
     description:
       "Responsive frontend slicing from UI designs using Tailwind CSS.",
     gradient: ["#7C2D12", "#F97316"],
-    url: "https://icownicpath.com",
+    url: "https://www.icownicpatch.com/",
     tech: ["html", "css", "javascript", "tailwind"],
   },
   {
