@@ -132,6 +132,14 @@ export const PROJECTS: IProject[] = [
     url: "https://www.bisnisnaikkelas.com/",
     tech: ["next", "react", "typescript", "Express JS"],
   },
+    {
+    name: "Pertamina Learning HUB",
+    image: "https://ap-south-1.linodeobjects.com/arnatech/2025/12/GcGR0ZG4-screenshot-1765456819350-1280x573.png",
+    description: "Fullstack LMS using .NetS.",
+    gradient: ["#4338CA", "#06B6D4"],
+    // url: "https://www.bisnisnaikkelas.com/",
+    tech: [".Net", "PostgreQL", "HTML", "JS"],
+  },
 ];
 
 export const SKILLS = {
