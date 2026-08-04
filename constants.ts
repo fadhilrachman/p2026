@@ -104,7 +104,7 @@ export const PROJECTS: IProject[] = [
       "Modern responsive escrow service platform built with Next.js.",
     gradient: ["#1D4ED8", "#38BDF8"],
     url: "https://www.escrowsg.com/",
-    tech: ["next", "react", "typescript", "tailwind"],
+    tech: ["next", "react", "typescript", "tailwind", "Wix"],
   },
   {
     name: "Indonesia Travel",
@@ -122,7 +122,7 @@ export const PROJECTS: IProject[] = [
       "Responsive frontend slicing from UI designs using Tailwind CSS.",
     gradient: ["#7C2D12", "#F97316"],
     url: "https://www.icownicpatch.com/",
-    tech: ["html", "css", "javascript", "tailwind"],
+    tech: ["React Js", "css", "javascript", "tailwind"],
   },
   {
     name: "CMS BKN",
@@ -139,6 +139,14 @@ export const PROJECTS: IProject[] = [
     gradient: ["#4338CA", "#06B6D4"],
     // url: "https://www.bisnisnaikkelas.com/",
     tech: [".Net", "PostgreQL", "HTML", "JS"],
+  },
+      {
+    name: "CRM Internal Application",
+    image: "https://ap-south-1.linodeobjects.com/arnatech/2025/01/IMG_2446-1280x908.jpeg",
+    description: "Responsible in Frontend using React Js, Antd & Tailwind.",
+    gradient: ["#4338CA", "#06B6D4"],
+    // url: "https://www.bisnisnaikkelas.com/",
+     tech: ["React Js", "css", "javascript", "Tailwind", "Antd"],
   },
 ];
 
